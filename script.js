@@ -66,12 +66,12 @@ const commands = {
         const helpText = `
 Available commands:
 - help           Displays this help text.
-- dir            Lists directories and files.
+- dir            Lists (visible) directories and files.
 - cls            Clears the screen.
-- run site1      Opens the first website.
-- run site2      Opens the second website.
+- run site1      Casts the first website.
+- run site2      Invokes the second website.
 - date           Displays the current date and time.
-- echo [text]    Replies with a philosophical quote.
+- echo [text]    The void looks back.
 - corrupt        [C0RЯЦP┴ MΣ...]
         `;
         displayOutput(helpText);
