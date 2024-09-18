@@ -28,7 +28,7 @@ body {
     color: #9900ff;
     outline: none;
     flex-grow: 1;
-    font-size: inherit;
+    font-size: 16px; /* Explicitly set font size */
     font-family: inherit;
 }
 
@@ -51,7 +51,16 @@ body {
     width: 100%;
 }
 
-
+/* Responsive Adjustments */
+@media only screen and (max-width: 600px) {
+    .ascii-art {
+        font-size: 7px;
+        line-height: 7px;
+    }
+    #command-input {
+        font-size: 16px; /* Ensure font size remains consistent on small screens */
+    }
+}
 
 .cursor {
     display: inline-block;
@@ -63,16 +72,6 @@ body {
 @keyframes blink {
     50% {
         background-color: transparent;
-    }
-}
-
-
-
-/* Responsive Adjustments */
-@media only screen and (max-width: 600px) {
-    .ascii-art {
-        font-size: 7px;
-        line-height: 7px;
     }
 }
 
