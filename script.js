@@ -48,7 +48,7 @@ const bootMessages = [
     "Boot sequence complete.",
     "",
     "<pre class='ascii-art'>" + asciiArt + "</pre>",
-    "Type 'help' to see available commands.",
+    "Scream 'help' to see available commands.",
     ""
 ];
 
