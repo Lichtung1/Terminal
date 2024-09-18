@@ -41,7 +41,7 @@ const asciiArt = `
 
 // Boot-up messages
 const bootMessages = [
-    "Starting Mysterious OS version 6.6.6...",
+    "Starting MMOS version 6.6.6...",
     "Checking spectral integrity...",
     "Loading occult drivers...",
     "Initializing metaphysical hardware...",
