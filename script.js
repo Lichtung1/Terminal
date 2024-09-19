@@ -78,10 +78,10 @@ Available commands:
 - dir            Lists directories and files.
 - cls            Clears the screen.
 - run            Executes a program (exe).
+- open [file]    Opens a file from the directory (mp3, jpg).
 - date           Displays the current date and time.
 - echo [text]    The void looks back.
 - corrupt        [C0RЯЦP┴ MΣ...]
-- open [file]    Opens a file from the directory (mp3, jpg).
         `;
         displayOutput(helpText);
     },
@@ -143,7 +143,7 @@ IMAGE4     JPG        10,000  06-06-2066  06:06 AM
             window.open('https://lichtung1.github.io/MoyaMoyaMaze/', '_blank');
             displayOutput('Executing PROGRAM2.EXE...');
         } else {
-            displayOutput(`Cannot run ${program}: Program not found.`);
+            displayOutput(`Cannot run ${program}: Program not found. Please use file extensions.`);
         }
     },
     'date': function() {
@@ -174,7 +174,7 @@ IMAGE4     JPG        10,000  06-06-2066  06:06 AM
             displayOutput("Opening " + fileName + "...");
             window.open('https://moyamoyawinnipeg.bandcamp.com/album/demolition-2024', '_blank');
         } else {
-            displayOutput(`Cannot open ${fileName}: File not found.`);
+            displayOutput(`Cannot open ${fileName}: File not found. Please use file extensions.`);
         }
     }
 
@@ -311,7 +311,7 @@ function processInput(input) {
     if (lowerInput === 'exit') {
         displayOutput('Shutting down...');
     } else {
-        displayOutput(`'${fullInput}' is not recognized as an internal or external command, operable program or batch file.`);
+        displayOutput(`'${fullInput}' is not recognized as an internal or external command, operable program or batch file. Type help for list of commands.`);
     }
 }
 
@@ -324,7 +324,11 @@ function processCombinationInput(input) {
     }
 
     if (input === correctCombination) {
-        displayOutput("The lock clicks open. You've unlocked the hidden content!");
+        displayOutput("The lock clicks open.");
+        displayCorruptedHint(`
+            You've torn the veil...
+            Eldritch binaries ᴍᴀɴɪғᴇsᴛᴇᴅ:`);
+            displayOutput("PROGRAM1.EXE, PROGRAM2.EXE");
         programsUnlocked = true;
         expectingCombination = false;
     } else {
@@ -348,7 +352,7 @@ function displayHiddenContent() {
 
     displayOutput(hiddenMessage);
 
-    // Optionally, unlock additional commands or reveal more options
+    // Develop, unlock additional commands or reveal more options
 }
 
 // Initialize the terminal
