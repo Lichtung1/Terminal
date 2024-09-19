@@ -376,7 +376,7 @@ async function simulateBoot() {
 // Display corrupted text
 function displayCorruptedText(text) {
     const outputElement = document.getElementById('output');
-    const corruptedText = corruptTextWithClues(text);
+    const corruptedText = corruptText(text);
     outputElement.innerHTML += corruptedText + '\n';
     outputElement.scrollTop = outputElement.scrollHeight;
 }
