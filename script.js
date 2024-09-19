@@ -60,8 +60,12 @@ const bootMessages = [
 // List of quotes
 const quotes = [
     "The unconscious is structured like a language. - Jacques Lacan",
-    "We learn from history that we do not learn from history. - Georg Hegel",
-    "Ideology is the most spontaneous relationship to our social world. - Slavoj Žižek",
+    "Desire is the desire of the Other. - Jacques Lacan",
+    "Spirit is a bone. - Georg Hegel",
+    "There is no transcendent reality behind the illusion of appearances. - Georg Hegel",
+    "The ancients conceived the void as the principle of motion, for they rightly saw the moving principle as the negative, though they did not as yet grasp that the negative is the self. - Georg Hegel",
+    "The function of ideology is not to offer us a point of escape from our reality but to offer us the social reality itself as an escape from some traumatic, real kernel. - Slavoj Žižek",
+    "Beyond the fiction of reality, there is the reality of the fiction. - Slavoj Žižek",
     // Add more quotes 
 ];
 
