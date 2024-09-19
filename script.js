@@ -138,12 +138,14 @@ IMAGE4     JPG        10,000  06-06-2066  06:06 AM
 
         if (program === 'PROGRAM1.EXE') {
             window.open('https://lichtung1.github.io/MoyaMoya/', '_blank');
-            displayOutput('Executing PROGRAM1.EXE...');
+            displayCorruptedText(`01001001 01101110 01110110 01101111 01101011 01101001 01101110 01100111 00100000 01110000 01110010 01101111 01100111 01110010 01100001 01101101 00110001 00101110 01100101 01111000 01100101 00101110 00101110 00101110
+Iɴᴠᴏᴋɪɴɢ ᴛʜᴇ ғɪʀsᴛ ᴅɪɢɪᴛᴀʟ sɪɢɪʟ: ᴘʀᴏɢʀᴀᴍ1.ᴇxᴇ`);
         } else if (program === 'PROGRAM2.EXE') {
             window.open('https://lichtung1.github.io/MoyaMoyaMaze/', '_blank');
-            displayOutput('Executing PROGRAM2.EXE...');
+            displayCorruptedText(`01010011 01110101 01101101 01101101 01101111 01101110 01101001 01101110 01100111 00100000 01110000 01110010 01101111 01100111 01110010 01100001 01101101 00110010 00101110 01100101 01111000 01100101 00101110 00101110 00101110
+                Mᴀɴɪғᴇsᴛɪɴɢ ᴛʜᴇ sᴇᴄᴏɴᴅ ᴄʏʙᴇʀ ʀɪᴛᴜᴀʟ: ᴘʀᴏɢʀᴀᴍ2.ᴇxᴇ`);
         } else {
-            displayOutput(`Cannot run ${program}: Program not found. Please use file extensions.`);
+            displayOutput(`Cannot run ${program}: Program not found.`);
         }
     },
     'date': function() {
