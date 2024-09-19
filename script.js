@@ -337,7 +337,7 @@ function processCombinationInput(input) {
         displayCorruptedHint(`
             You've torn the veil...
             Eldritch binaries ᴍᴀɴɪғᴇsᴛᴇᴅ:`);
-            displayOutput("PROGRAM1.EXE, PROGRAM2.EXE");
+            displayOutput("PROGRAM2.EXE");
         programsUnlocked = true;
         expectingCombination = false;
     } else {
