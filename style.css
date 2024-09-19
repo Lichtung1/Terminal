@@ -66,8 +66,8 @@ body {
 /* Responsive Adjustments */
 @media only screen and (max-width: 600px) {
     .ascii-art {
-        font-size: 7px;
-        line-height: 7px;
+        font-size: 5px;
+        line-height: 5px;
     }
     #command-input {
         font-size: 16px;
