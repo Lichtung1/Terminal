@@ -5,21 +5,34 @@ body {
     margin: 0;
     padding: 0;
     font-size: 16px;
+    /* Remove height and overflow settings */
 }
 
-#terminal, #input-line {
+#terminal {
+    width: 100%;
     max-width: 100%;
     margin: 0 auto;
     padding: 10px;
     box-sizing: border-box;
+    /* Remove display: flex and height settings */
 }
 
 #output {
     white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+
 }
 
 #input-line {
     display: flex;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 #command-input {
@@ -28,7 +41,7 @@ body {
     color: #9900ff;
     outline: none;
     flex-grow: 1;
-    font-size: 16px; /* Explicitly set font size */
+    font-size: 16px;
     font-family: inherit;
 }
 
@@ -42,15 +55,14 @@ body {
 
 /* ASCII Art Styling */
 .ascii-art {
-    font-size: 10px;
-    line-height: 10px;
-    white-space: pre;
-    display: block;
-    overflow-x: hidden; /* Hide horizontal overflow */
-    margin-bottom: 1em;
-    width: 100%;
-}
+    font-size: 6px; /* Adjust as needed */
+    line-height: 0.8; /* Reduce vertical spacing */
+    white-space: pre; /* Preserve whitespace and line breaks */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
 
+    overflow-x: auto; /* Allow horizontal scrolling if necessary */
+}
 /* Responsive Adjustments */
 @media only screen and (max-width: 600px) {
     .ascii-art {
@@ -58,7 +70,11 @@ body {
         line-height: 7px;
     }
     #command-input {
-        font-size: 16px; /* Ensure font size remains consistent on small screens */
+        font-size: 16px;
+    }
+    .image-gallery img {
+        width: 100%;
+        margin: 1% 0;
     }
 }
 
@@ -79,6 +95,9 @@ body {
 .glitch {
     position: relative;
     color: #9900ff;
+    display: inline-block; /* Ensure glitch element is treated as block or inline-block */
+    overflow: hidden; /* Hide overflow from pseudo-elements */
+    margin-bottom: 1em; /* Add space below the glitch effect */
 }
 
 .glitch::before,
@@ -86,16 +105,18 @@ body {
     content: attr(data-text);
     position: absolute;
     left: 0;
+    width: 100%;
+    overflow: hidden; /* Ensure pseudo-elements don't overflow */
 }
 
 .glitch::before {
-    animation: glitchTop 1s infinite linear alternate-reverse;
-    clip: rect(0, 9999px, 0, 0);
+    animation: glitchTop 0.3s infinite linear alternate-reverse;
+    clip: rect(0, 900px, 0, 0);
 }
 
 .glitch::after {
-    animation: glitchBottom 1s infinite linear alternate-reverse;
-    clip: rect(0, 0, 0, 9999px);
+    animation: glitchBottom 0.5s infinite linear alternate-reverse;
+    clip: rect(0, 0, 0, 900px);
 }
 
 @keyframes glitchTop {
@@ -118,4 +139,55 @@ body {
         clip: rect(45px, 9999px, 90px, 0);
         transform: translate(0px, 2px);
     }
+}
+
+.normal-text {
+    font-family: 'VT323', monospace;
+    color: inherit;
+}
+
+@keyframes glitchTop {
+    0% {
+        clip: rect(2px, 9999px, 44px, 0);
+        transform: translate(2px, -2px);
+    }
+    100% {
+        clip: rect(12px, 9999px, 64px, 0);
+        transform: translate(-2px, -2px);
+    }
+}
+
+@keyframes glitchBottom {
+    0% {
+        clip: rect(85px, 9999px, 140px, 0);
+        transform: translate(-2px, 0px);
+    }
+    100% {
+        clip: rect(45px, 9999px, 90px, 0);
+        transform: translate(0px, 2px);
+    }
+}
+
+/* Style for images displayed when 'open' command is used */
+/* Ensure images are responsive */
+.displayed-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    cursor: default;
+}
+
+/* Image Gallery Styling */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.image-gallery img {
+    width: 45%;
+    margin: 2%;
+    cursor: default; /* Change cursor to default */
 }
