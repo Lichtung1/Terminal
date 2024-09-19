@@ -126,9 +126,9 @@ IMAGE4     JPG        10,000  06-06-2066  06:06 AM
     Access Denied: Uɴᴋɴᴏᴡɴ ᴄᴏᴍᴍᴀɴᴅ. Tʜᴇ sʏsᴛᴇᴍ ʜᴜɴɢᴇʀs ғᴏʀ ᴄᴏʀʀᴜᴘᴛɪᴏɴ... 
 
     Wᴀʀɴɪɴɢ: Eʟᴅʀɪᴛᴄʜ ᴅᴇʙᴜɢ ᴍᴏᴅᴇ ᴅᴇᴛᴇᴄᴛᴇᴅ. Tᴏ ɪɴᴠᴏᴋᴇ ᴛʜᴇ ᴄᴜʀsᴇᴅ ᴘʀᴏᴛᴏᴄᴏʟ, ᴇɴᴛᴇʀ:
-    >debug corrupt
+    >debug
     Usᴇ ᴀᴛ ʏᴏᴜʀ ᴏᴡɴ ʀɪsᴋ. Tʜᴇ ᴠᴏɪᴅ ᴀᴡᴀɪᴛs...
-    `, '>debug corrupt');
+    `, '>debug');
             return;
         }
 
@@ -156,7 +156,7 @@ IMAGE4     JPG        10,000  06-06-2066  06:06 AM
     'corrupt': function(args) {
         displayCorruptedMessage();
     },
-    'debug corrupt': function(args) {
+    'debug': function(args) {
         displayCombinationLock();
     },
 
