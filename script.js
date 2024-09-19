@@ -122,31 +122,38 @@ IMAGE4     JPG        10,000  06-06-2066  06:06 AM
         // Clear the screen
         outputElement.innerHTML = '';
     },
-'run': function(args) {
-    const program = args.join(' ').toUpperCase();
-
-    if (!programsUnlocked) {
-        displayCorruptedHint(`
-    Access Denied: Uɴᴋɴᴏᴡɴ ᴄᴏᴍᴍᴀɴᴅ. Tʜᴇ sʏsᴛᴇᴍ ʜᴜɴɢᴇʀs ғᴏʀ ᴄᴏʀʀᴜᴘᴛɪᴏɴ... 
-
-    Wᴀʀɴɪɴɢ: Eʟᴅʀɪᴛᴄʜ ᴅᴇʙᴜɢ ᴍᴏᴅᴇ ᴅᴇᴛᴇᴄᴛᴇᴅ. Tᴏ ɪɴᴠᴏᴋᴇ ᴛʜᴇ ᴄᴜʀsᴇᴅ ᴘʀᴏᴛᴏᴄᴏʟ, ᴇɴᴛᴇʀ:
-    >debug
-    Usᴇ ᴀᴛ ʏᴏᴜʀ ᴏᴡɴ ʀɪsᴋ. Tʜᴇ ᴠᴏɪᴅ ᴀᴡᴀɪᴛs...
-    `, '>debug');
-            return;
-        }
-
+    'run': function(args) {
+        const program = args.join(' ').toUpperCase();
+    
+        // Check for PROGRAM1.EXE without any restrictions
         if (program === 'PROGRAM1.EXE') {
             window.open('https://lichtung1.github.io/MoyaMoya/', '_blank');
             displayCorruptedHint(`01001001 01101110 01110110 01101111 01101011 01101001 01101110 01100111 00100000 01110000 01110010 01101111 01100111 01110010 01100001 01101101 00110001 00101110 01100101 01111000 01100101 00101110 00101110 00101110
-Iɴᴠᴏᴋɪɴɢ ᴛʜᴇ ғɪʀsᴛ ᴅɪɢɪᴛᴀʟ sɪɢɪʟ: ᴘʀᴏɢʀᴀᴍ1.ᴇxᴇ`);
-        } else if (program === 'PROGRAM2.EXE') {
+    Iɴᴠᴏᴋɪɴɢ ᴛʜᴇ ғɪʀsᴛ ᴅɪɢɪᴛᴀʟ sɪɢɪʟ: ᴘʀᴏɢʀᴀᴍ1.ᴇxᴇ`);
+            return; // Exit after handling PROGRAM1.EXE
+        }
+    
+        // Check for PROGRAM2.EXE with restrictions
+        if (program === 'PROGRAM2.EXE') {
+            if (!programsUnlocked) {
+                displayCorruptedHint(`
+                    Access Denied: Uɴᴋɴᴏᴡɴ ᴄᴏᴍᴍᴀɴᴅ. Tʜᴇ sʏsᴛᴇᴍ ʜᴜɴɢᴇʀs ғᴏʀ ᴄᴏʀʀᴜᴘᴛɪᴏɴ... 
+    
+                    Wᴀʀɴɪɴɢ: Eʟᴅʀɪᴛᴄʜ ᴅᴇʙᴜɢ ᴍᴏᴅᴇ ᴅᴇᴛᴇᴄᴛᴇᴅ. Tᴏ ɪɴᴠᴏᴋᴇ ᴛʜᴇ ᴄᴜʀsᴇᴅ ᴘʀᴏᴛᴏᴄᴏʟ, ᴇɴᴛᴇʀ:
+                    >debug
+                    Usᴇ ᴀᴛ ʏᴏᴜʀ ᴏᴡɴ ʀɪsᴋ. Tʜᴇ ᴠᴏɪᴅ ᴀᴡᴀɪᴛs...
+                `, '>debug');
+                return; // Exit if PROGRAM2.EXE is locked
+            }
+            // If unlocked, proceed to run PROGRAM2.EXE
             window.open('https://lichtung1.github.io/MoyaMoyaMaze/', '_blank');
             displayCorruptedHint(`01010011 01110101 01101101 01101101 01101111 01101110 01101001 01101110 01100111 00100000 01110000 01110010 01101111 01100111 01110010 01100001 01101101 00110010 00101110 01100101 01111000 01100101 00101110 00101110 00101110
                 Mᴀɴɪғᴇsᴛɪɴɢ ᴛʜᴇ sᴇᴄᴏɴᴅ ᴄʏʙᴇʀ ʀɪᴛᴜᴀʟ: ᴘʀᴏɢʀᴀᴍ2.ᴇxᴇ`);
-        } else {
-            displayOutput(`Cannot run ${program}: Program not found.`);
+            return;
         }
+    
+        // Handle cases where the program is not recognized
+        displayOutput(`Cannot run ${program}: Program not found.`);
     },
     'date': function() {
         // Always display a future date
